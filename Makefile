@@ -8,6 +8,7 @@ libadd.a: add.o
 	size libadd.a
 
 libmyprint.so: myprint.c
+	rm libmyprint.so
 	gcc -o libmyprint.1.0.0.so myprint.c -shared -fPIC
 	ln -s libmyprint.1.0.0.so libmyprint.so
 
