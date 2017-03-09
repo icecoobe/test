@@ -9,8 +9,8 @@ libadd.a: add.o
 
 libmyprint.so: myprint.c
 	rm libmyprint.so
-	gcc -o libmyprint.1.0.0.so myprint.c -shared -fPIC
-	ln -s libmyprint.1.0.0.so libmyprint.so
+	gcc -o libmyprint.so.1.0.0 myprint.c -shared -fPIC
+	ln -s libmyprint.so.1.0.0 libmyprint.so
 
 test: libadd.a test.c 
 	gcc -o test test.c -ladd -lmyprint -L.
