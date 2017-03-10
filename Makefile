@@ -8,11 +8,11 @@ libadd.a: add.o
 	size libadd.a
 
 libmyprint.so: myprint.c
-	rm libmyprint.so
+	rm -f libmyprint.so
 	gcc -o libmyprint.so.1.0.0 myprint.c -shared -fPIC
 	ln -s libmyprint.so.1.0.0 libmyprint.so
 
-test: libadd.a test.c 
+test: libadd.a test.c libmyprint.so 
 	gcc -o test test.c -ladd -lmyprint -L.
 
 clean:
